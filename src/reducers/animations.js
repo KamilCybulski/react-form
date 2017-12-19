@@ -1,20 +1,13 @@
 const initialState = {
-  showBackgroundOverlay: false,
-  showForm: false,
+  backgroundOverlayVisible: true,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SHOW_BACKGROUND_OVERLAY':
+    case 'HIDE_BACKGROUND_OVERLAY':
       return {
         ...state,
-        showBackgroundOverlay: true,
-      };
-
-    case 'SHOW_FORM':
-      return {
-        ...state,
-        showForm: true,
+        backgroundOverlayVisible: false,
       };
 
     default:

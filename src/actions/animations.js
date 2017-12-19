@@ -1,5 +1,5 @@
-export const showBackgroundOverlay = () => ({
-  type: 'SHOW_BACKGROUND_OVERLAY',
+export const hideBackgroundOverlay = () => ({
+  type: 'HIDE_BACKGROUND_OVERLAY',
 });
 
 export const showForm = () => ({
