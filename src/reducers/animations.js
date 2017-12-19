@@ -1,5 +1,6 @@
 const initialState = {
   backgroundOverlayVisible: true,
+  formVisible: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         backgroundOverlayVisible: false,
+      };
+
+    case 'SHOW_FORM':
+      return {
+        ...state,
+        formVisible: true,
       };
 
     default:
