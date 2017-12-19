@@ -29,7 +29,9 @@ Overlay.propTypes = {
   dispatchAfterExit: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  visible: state.animations.backgroundOverlayVisible,
+});
 const mapDispatchToProps = dispatch => ({
   dispatchAfterExit() {
     dispatch(showForm());
