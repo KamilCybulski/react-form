@@ -1,6 +1,7 @@
 const initialState = {
   backgroundOverlayVisible: true,
-  formVisible: false,
+  formWrapperVisible: false,
+  formAsideVisible: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -11,10 +12,16 @@ const reducer = (state = initialState, action) => {
         backgroundOverlayVisible: false,
       };
 
-    case 'SHOW_FORM':
+    case 'SHOW_FORM_WRAPPER':
       return {
         ...state,
-        formVisible: true,
+        formWrapperVisible: true,
+      };
+
+    case 'SHOW_FORM_ASIDE':
+      return {
+        ...state,
+        formAsideVisible: true,
       };
 
     default:

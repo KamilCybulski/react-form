@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import FormWrapper from '../components/FormWrapper';
+import FormAside from '../components/FormAside';
 import Overlay from '../components/Overlay';
 import { hideBackgroundOverlay } from '../actions/animations';
 
@@ -15,7 +16,8 @@ class Main extends React.Component {
     return (
       <main className="main">
         <Overlay />
-        {this.props.formVisible && <FormWrapper />}
+        {this.props.formAsideVisible && <FormAside />}
+        {this.props.formWrapperVisible && <FormWrapper />}
       </main>
     );
   }
@@ -23,11 +25,13 @@ class Main extends React.Component {
 
 Main.propTypes = {
   hideOverlay: PropTypes.func.isRequired,
-  formVisible: PropTypes.bool.isRequired,
+  formWrapperVisible: PropTypes.bool.isRequired,
+  formAsideVisible: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-  formVisible: state.animations.formVisible,
+  formWrapperVisible: state.animations.formWrapperVisible,
+  formAsideVisible: state.animations.formAsideVisible,
 });
 
 const mapDispatchToProps = dispatch => ({

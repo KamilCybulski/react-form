@@ -29,7 +29,7 @@ FormWrapper.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  visible: state.animations.formVisible,
+  visible: state.animations.formWrapperVisible,
 });
 
 export default connect(mapStateToProps)(FormWrapper);

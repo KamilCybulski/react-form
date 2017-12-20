@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   transition: transform 1s;
+  transform-origin: 40%;
 
   &_exiting {
     transform: scaleX(0);

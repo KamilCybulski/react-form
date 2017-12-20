@@ -1,12 +1,30 @@
-.form__wrapper {
-  width: 200px;
-  height: 300px;
-  background-color: #fff;
-  padding: 10px;
-  transform: scaleX(0);
-  transition: transform .5s;
+.form {
 
-  &_entered {
-    transform: scaleX(1);
+  &__wrapper {
+    box-sizing: border-box;
+    width: 470px;
+    height: 552px;
+    background-color: #fff;
+    padding: 10px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: left;
+
+    &_entered {
+      transform: scaleX(1);
+    }
+  }
+
+  &__aside {
+    width: 308px;
+    height: 552px;
+    background-color: lightcoral;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+
+    &_entered {
+      transform: scaleX(1);
+    }
   }
 }
