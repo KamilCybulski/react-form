@@ -13,7 +13,7 @@ const transitionClasses = {
 const FormAside = ({ visible, dispatchAfterEnter }) => (
   <Transition
     in={visible}
-    timeout={500}
+    timeout={window.innerWidth > 820 ? 500 : 0}
     appear
     onEntered={dispatchAfterEnter}
   >

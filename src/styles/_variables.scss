@@ -1,0 +1,17 @@
+/*===========================================
+                  Dimensions
+===========================================*/
+$form-aside-width: 308px;
+$form-wrapper-width-lg: 470px;
+$form-wrapper-width-s: 370px;
+$form-wrapper-width-xs: 290px;
+
+$overlay-transform-offset: calc(((#{$form-aside-width} + #{$form-wrapper-width-lg}) / 2) - #{$form-aside-width});
+
+
+/*===========================================
+                  Breakpoints
+===========================================*/
+$display-aside-breakpoint: 820px;
+$breakpoint-s: 550px;
+$breakpoint-xs: 400px;

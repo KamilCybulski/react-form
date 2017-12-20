@@ -2,13 +2,18 @@
 
   &__wrapper {
     box-sizing: border-box;
-    width: 470px;
+    width: 80%;
+    max-width: 470px;
+    min-width: 288px;
     height: 552px;
     background-color: #fff;
     padding: 10px;
     transform: scaleX(0);
     transition: transform .5s;
-    transform-origin: left;
+
+    @media screen and (min-width: $display-aside-breakpoint) {
+      transform-origin: left;
+    }
 
     &_entered {
       transform: scaleX(1);
@@ -16,12 +21,17 @@
   }
 
   &__aside {
-    width: 308px;
+    width: $form-aside-width;
     height: 552px;
     background-color: lightcoral;
     transform: scaleX(0);
     transition: transform .5s;
     transform-origin: right;
+
+    @media screen and (max-width: $display-aside-breakpoint) {
+      display: none;
+      transition: 0s;
+    }
 
     &_entered {
       transform: scaleX(1);
