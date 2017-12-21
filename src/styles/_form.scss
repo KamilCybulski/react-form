@@ -1,21 +1,28 @@
 .form {
+  
+  &__content {
+    background-color: #fff;
+    height: 510px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  
+    @media screen and (min-width: $display-aside-breakpoint) {
+      height: 552px;
+    }
+  }
 
   &__wrapper {
+    border: 2px dashed #ddd;
     box-sizing: border-box;
     width: 80%;
     max-width: 470px;
     min-width: 288px;
     height: 590px;
-    transform: scaleX(0);
-    transition: transform .5s;
 
     @media screen and (min-width: $display-aside-breakpoint) {
-      transform-origin: left;
       height: 712px;
-    }
-
-    &_entered {
-      transform: scaleX(1);
     }
   }
 
@@ -47,5 +54,11 @@
       height: 80px;
       font-size: 48px;
     }
+  }
+
+  &__footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
 }
