@@ -7,14 +7,21 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: center;
   
     @media screen and (min-width: $display-aside-breakpoint) {
       height: 552px;
+      transform-origin: left;
+    }
+
+    &_entered {
+      transform: scaleX(1);
     }
   }
 
   &__wrapper {
-    border: 2px dashed #ddd;
     box-sizing: border-box;
     width: 80%;
     max-width: 470px;
@@ -49,10 +56,19 @@
     text-align: center;
     height: 55px;
     color: #fff;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: center;
+    
 
     @media screen and (min-width: $display-aside-breakpoint) {
       height: 80px;
       font-size: 48px;
+      transform-origin: left;
+    }
+
+    &_entered {
+      transform: scaleX(1);
     }
   }
 
