@@ -34,7 +34,7 @@
     transform: scaleX(1);
   }
 
-  @media screen and (max-width: $display-aside-breakpoint) {
+  @media screen and (max-width: $hide-aside-breakpoint) {
     display: none;
     transition: 0s;
   }
@@ -83,6 +83,7 @@
   flex-flow: column nowrap;
   align-items: center;
 }
+
 
 .button {
   width: 237px;
