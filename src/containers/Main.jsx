@@ -17,7 +17,7 @@ class Main extends React.Component {
       <main className="main">
         <Overlay />
         {this.props.formAsideVisible && <FormAside />}
-        {this.props.formWrapperVisible && <FormWrapper />}
+        {this.props.formVisible && <FormWrapper />}
       </main>
     );
   }
@@ -25,12 +25,12 @@ class Main extends React.Component {
 
 Main.propTypes = {
   hideOverlay: PropTypes.func.isRequired,
-  formWrapperVisible: PropTypes.bool.isRequired,
+  formVisible: PropTypes.bool.isRequired,
   formAsideVisible: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-  formWrapperVisible: state.animations.formWrapperVisible,
+  formVisible: state.animations.formVisible,
   formAsideVisible: state.animations.formAsideVisible,
 });
 

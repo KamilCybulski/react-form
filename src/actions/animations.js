@@ -2,8 +2,8 @@ export const hideBackgroundOverlay = () => ({
   type: 'HIDE_BACKGROUND_OVERLAY',
 });
 
-export const showFormWrapper = () => ({
-  type: 'SHOW_FORM_WRAPPER',
+export const showForm = () => ({
+  type: 'SHOW_FORM',
 });
 
 export const showFormAside = () => ({
