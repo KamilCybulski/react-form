@@ -5,14 +5,13 @@
     width: 80%;
     max-width: 470px;
     min-width: 288px;
-    height: 552px;
-    background-color: #fff;
-    padding: 10px;
+    height: 590px;
     transform: scaleX(0);
     transition: transform .5s;
 
     @media screen and (min-width: $display-aside-breakpoint) {
       transform-origin: left;
+      height: 712px;
     }
 
     &_entered {
@@ -35,6 +34,18 @@
 
     &_entered {
       transform: scaleX(1);
+    }
+  }
+
+  &__header {
+    margin: 0;
+    text-align: center;
+    height: 55px;
+    color: #fff;
+
+    @media screen and (min-width: $display-aside-breakpoint) {
+      height: 80px;
+      font-size: 48px;
     }
   }
 }

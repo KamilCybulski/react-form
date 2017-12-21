@@ -2,3 +2,16 @@
 @import './_normalize.scss';
 @import './_main.scss';
 @import './_form.scss';
+
+body {
+  background-color: #2f2f2f;
+}
+
+.temp {
+  background-color: #fff;
+  height: 510px;
+
+  @media screen and (min-width: $display-aside-breakpoint) {
+    height: 552px;
+  }
+}
