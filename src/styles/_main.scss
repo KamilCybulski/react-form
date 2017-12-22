@@ -1,23 +1,13 @@
 .main {
   width: 100vw;
   height: 100vh;
-  min-height: 590px;
+  min-height: 640px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 0;
-
-  @media screen and (min-height: 640px) {
-    padding: 0;
-  }
 
   @media screen and (min-width: $display-aside-breakpoint) {
-    min-height: 657px;
-    padding: 30px 0;
-  }
-
-  @media screen and (min-height: 717px) {
-    padding: 0;
+    min-height: 717px;
   }
 }
 
