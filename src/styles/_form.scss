@@ -78,6 +78,16 @@
 }
 
 
+.form__row {
+  width: 90%;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed black;
+}
+
+
 .form__footer {
   display: flex;
   flex-flow: column nowrap;

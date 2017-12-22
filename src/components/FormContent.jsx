@@ -16,9 +16,21 @@ const FormContent = ({ visible }) => (
   >
     {state => (
       <div className={`form__content${transitionClasses[state] || ''}`}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Quos id quia aut, debitis labore aperiam accusamus quibusdam
-        laborum voluptas nobis quo optio, earum natus doloribus animi a eius illum unde.
+        <div className="form__row">
+          lorem ipsum something
+        </div>
+        <div className="form__row">
+          name
+        </div>
+        <div className="form__row">
+          phone
+        </div>
+        <div className="form__row">
+          gender
+        </div>
+        <div className="form__row">
+          b-day
+        </div>
       </div>
     )}
   </Transition>
