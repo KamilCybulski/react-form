@@ -10,6 +10,14 @@ const transitionClasses = {
   exited: ' overlay_exited',
 };
 
+/**
+ * This should be set with CSS calc() function, but both IE and Edge
+ * are buggy when using calc() for tranfromrations / transitions
+ */
+const transformOriginValue = window.innerWidth >= 820
+  ? `${(window.innerWidth / 2) - 82}px`
+  : 'center';
+
 
 const Overlay = ({ visible, dispatchAfterExit }) => (
   <Transition
@@ -19,7 +27,10 @@ const Overlay = ({ visible, dispatchAfterExit }) => (
     onExited={dispatchAfterExit}
   >
     {state => (
-      <div className={`overlay${transitionClasses[state] || ''}`} />
+      <div
+        className={`overlay${transitionClasses[state] || ''}`}
+        style={{ transformOrigin: transformOriginValue }}
+      />
     )}
   </Transition>
 );

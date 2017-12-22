@@ -30,10 +30,6 @@
   align-items: center;
   transition: transform 1s;
 
-  @media screen and (min-width: $display-aside-breakpoint) {
-    transform-origin: calc(50% - #{$overlay-transform-offset});
-  }
-
   &_exiting {
     transform: scaleX(0);
   }
