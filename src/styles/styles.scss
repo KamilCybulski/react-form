@@ -1,7 +1,7 @@
 @import './_variables.scss';
 @import './_normalize.scss';
-@import './_main.scss';
-@import './_form.scss';
+@import './main/_all.scss';
+@import './form/_all.scss';
 
 body {
   background-color: #2f2f2f;
