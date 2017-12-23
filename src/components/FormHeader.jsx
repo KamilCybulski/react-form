@@ -16,7 +16,7 @@ const FormHeader = ({ visible }) => (
   >
     {state => (
       <div className={`form__header${transitionClasses[state] || ''}`}>
-        Your Account
+        Your account
       </div>
     )}
   </Transition>

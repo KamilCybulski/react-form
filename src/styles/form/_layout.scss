@@ -46,6 +46,9 @@
   text-align: center;
   height: 55px;
   color: #fff;
+  font-size: 36px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
   @extend %unfold;
   
   &_entered {
