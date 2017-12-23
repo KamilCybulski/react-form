@@ -60,12 +60,14 @@
 
 
 .form__content {
+  box-sizing: border-box;
   background-color: #fff;
   height: 510px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: 35px 0 70px 0;
   @extend %unfold;
 
   &_entered {
@@ -80,11 +82,15 @@
 
 .form__row {
   width: 90%;
-  height: 85px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px dashed black;
+  // border: 1px dashed black;
+
+  @media screen and (min-width: 430px) {
+    width: 80%;
+  }
 }
 
 

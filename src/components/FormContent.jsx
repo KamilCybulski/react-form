@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import { connect } from 'react-redux';
+import { Field } from 'redux-form';
+
+import TextField from './form_fields/TextField';
 
 const transitionClasses = {
   entering: ' form__content_entering',
@@ -17,7 +20,11 @@ const FormContent = ({ visible }) => (
     {state => (
       <div className={`form__content${transitionClasses[state] || ''}`}>
         <div className="form__row">
-          lorem ipsum something
+          <Field
+            name="name"
+            component={TextField}
+            label="Your name"
+          />
         </div>
         <div className="form__row">
           name

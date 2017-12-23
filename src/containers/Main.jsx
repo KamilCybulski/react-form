@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import FormWrapper from '../components/FormWrapper';
+import FormContainer from './FormContainer';
 import FormAside from '../components/FormAside';
 import Overlay from '../components/Overlay';
 import { hideBackgroundOverlay } from '../actions/animations';
@@ -17,7 +17,7 @@ class Main extends React.Component {
       <main className="main">
         <Overlay />
         {this.props.formAsideVisible && <FormAside />}
-        {this.props.formVisible && <FormWrapper />}
+        {this.props.formVisible && <FormContainer />}
       </main>
     );
   }

@@ -16,9 +16,12 @@ const FormFooter = ({ visible }) => (
       appear
     >
       {state => (
-        <div className={`button${transitionClasses[state] || ''}`}>
+        <button
+          className={`button${transitionClasses[state] || ''}`}
+          type="submit"
+        >
           Send Stuff
-        </div>
+        </button>
       )}
     </Transition>
   </div>

@@ -1,15 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { reduxForm } from 'redux-form';
 
 import FormContent from './FormContent';
 import FormHeader from './FormHeader';
 import FormFooter from './FormFooter';
 
-const FormWrapper = () => (
+const FormWrapper = ({ handleSubmit }) => (
   <div className="form__wrapper">
-    <FormHeader />
-    <FormContent />
-    <FormFooter />
+    <form onSubmit={handleSubmit}>
+      <FormHeader />
+      <FormContent />
+      <FormFooter />
+    </form>
   </div>
 );
 
-export default FormWrapper;
+FormWrapper.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
+
+export default reduxForm({ form: 'account' })(FormWrapper);

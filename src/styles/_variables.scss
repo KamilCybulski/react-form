@@ -3,10 +3,7 @@
 ===========================================*/
 $form-aside-width: 308px;
 $form-wrapper-width-lg: 470px;
-$form-wrapper-width-s: 370px;
-$form-wrapper-width-xs: 290px;
 
-$overlay-transform-offset: calc(((#{$form-aside-width} + #{$form-wrapper-width-lg}) / 2) - #{$form-aside-width});
 
 
 /*===========================================
@@ -14,5 +11,12 @@ $overlay-transform-offset: calc(((#{$form-aside-width} + #{$form-wrapper-width-l
 ===========================================*/
 $display-aside-breakpoint: 820px;
 $hide-aside-breakpoint: 819px;
-$breakpoint-s: 550px;
-$breakpoint-xs: 400px;
+
+
+/*===========================================
+                  Colors
+===========================================*/
+$primary-text-color: rgb(32,32,32);
+$secondary-text-color: rgb(162,162,175);
+$error-text-color: rgba(234,48,48, .7);
+$accent-color: #531fbf;
