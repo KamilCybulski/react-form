@@ -12,6 +12,10 @@ const TextField = ({ input, meta, label }) => (
   </div>
 );
 
+TextField.defaultProps = {
+  label: '',
+};
+
 TextField.propTypes = {
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -22,7 +26,7 @@ TextField.propTypes = {
     pristine: PropTypes.bool.isRequired,
     error: PropTypes.string,
   }).isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
 };
 
 export default TextField;
