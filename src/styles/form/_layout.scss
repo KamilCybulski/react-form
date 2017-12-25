@@ -1,4 +1,4 @@
-%unfold {
+%scale-animation {
   transform: scaleX(0);
   transition: transform .5s;
   transform-origin: center;
@@ -49,7 +49,7 @@
   font-size: 36px;
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
-  @extend %unfold;
+  @extend %scale-animation;
   
   &_entered {
     transform: scaleX(1);
@@ -71,7 +71,7 @@
   justify-content: center;
   align-items: center;
   padding: 35px 0 70px 0;
-  @extend %unfold;
+  @extend %scale-animation;
 
   &_entered {
     transform: scaleX(1);
@@ -83,6 +83,7 @@
 }
 
 
+/* For splitting your form into rows. Rows will take equal amount od space in their container. If there is only one row, it will be as high as the container */
 .form__row {
   width: 90%;
   flex: 1;
@@ -93,6 +94,39 @@
 
   @media screen and (min-width: 430px) {
     width: 80%;
+  }
+}
+
+
+/* For splitting your form into sections smaller then rows. Form cells should be used inside form rows. Long cell will take almost all the space remaining after allocating all other elements with fixed width (expect for margins between cells). */
+.form__cell {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed black;
+  min-width: 0;
+
+  &:first-child {
+    margin-right: 6px;
+  }
+
+  &:last-child {
+    margin-left: 6px;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    margin: 0 6px;
+  }
+  
+  &_short {
+    @extend .form__cell;
+    flex: 0 0 114px;
+  }
+
+  &_long {
+    @extend .form__cell;
+    flex: 1 1
   }
 }
 
@@ -110,7 +144,7 @@
   box-shadow: 0px 20px 25px rgba(32,31,54,0.15);
   background-image: linear-gradient(0deg, #8557eb 0%, #6529e5 100%);
   margin-top: -25px;
-  @extend %unfold;
+  @extend %scale-animation;
 
   &_entered {
     transform: scaleX(1);

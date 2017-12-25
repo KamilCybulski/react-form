@@ -20,4 +20,10 @@ FormWrapper.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default reduxForm({ form: 'account' })(FormWrapper);
+const initialValues = {
+  mobile: {
+    prefix: '+48',
+  },
+};
+
+export default reduxForm({ form: 'account', initialValues })(FormWrapper);

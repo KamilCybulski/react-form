@@ -6,6 +6,7 @@ import { Field } from 'redux-form';
 
 import FormDescription from './form_fields/FormDescription';
 import TextField from './form_fields/TextField';
+import SelectField from './form_fields/SelectField';
 
 const transitionClasses = {
   entering: ' form__content_entering',
@@ -13,6 +14,13 @@ const transitionClasses = {
 };
 
 const description = 'Take it all with you. Switch between devices, and pick up.';
+
+const prefixes = [
+  { num: '+48', country: 'PL' },
+  { num: '+42', country: 'CZ' },
+  { num: '+370', country: 'LT' },
+  { num: '+371', country: 'LV' },
+];
 
 const FormContent = ({ visible }) => (
   <Transition
@@ -33,7 +41,20 @@ const FormContent = ({ visible }) => (
           />
         </div>
         <div className="form__row">
-          phone
+          <div className="form__cell_short">
+            <Field
+              name="mobile.prefix"
+              component={SelectField}
+              label="Mobile"
+              options={prefixes}
+            />
+          </div>
+          <div className="form__cell_long">
+            <Field
+              name="mobile.number"
+              component={TextField}
+            />
+          </div>
         </div>
         <div className="form__row">
           gender
