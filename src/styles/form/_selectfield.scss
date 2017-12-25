@@ -57,10 +57,6 @@
   transform: scaleX(1);
 }
 
-
-option {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: pink;
+.selectfield__option {
+  background-color: #fff;
 }
-

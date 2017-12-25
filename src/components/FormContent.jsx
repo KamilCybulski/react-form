@@ -22,6 +22,16 @@ const prefixes = [
   { num: '+371', country: 'LV' },
 ];
 
+const mapFn = item => (
+  <option
+    className="selectfield__option"
+    key={item.num}
+    value={item.num}
+  >
+    {item.num} ({item.country})
+  </option>
+);
+
 const FormContent = ({ visible }) => (
   <Transition
     in={visible}
@@ -47,6 +57,7 @@ const FormContent = ({ visible }) => (
               component={SelectField}
               label="Mobile"
               options={prefixes}
+              map={mapFn}
             />
           </div>
           <div className="form__cell_long">

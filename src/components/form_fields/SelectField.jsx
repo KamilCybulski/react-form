@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectField = ({ input, label, options }) => (
+const SelectField = ({
+  input, label, options, map,
+}) => (
   <div className="selectfield">
     <div className="selectfield__controls">
       <span className="selectfield__label">{label}</span>
@@ -10,11 +12,7 @@ const SelectField = ({ input, label, options }) => (
       {...input}
       className="selectfield__input"
     >
-      {options.map(opt => (
-        <option key={opt.num} value={opt.num}>
-          {opt.num} ({opt.country})
-        </option>
-      ))}
+      {options.map(map)}
     </select>
     <span className="selectfield__underline" />
   </div>
@@ -31,6 +29,7 @@ SelectField.propTypes = {
   }).isRequired,
   label: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  map: PropTypes.func.isRequired,
 };
 
 export default SelectField;
