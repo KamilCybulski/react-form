@@ -22,7 +22,7 @@ FormWrapper.propTypes = {
 
 const initialValues = {
   mobile: {
-    prefix: '+48',
+    prefix: '+48 (PL)',
   },
 };
 

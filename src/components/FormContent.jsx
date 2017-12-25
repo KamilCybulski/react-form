@@ -16,10 +16,11 @@ const transitionClasses = {
 const description = 'Take it all with you. Switch between devices, and pick up.';
 
 const prefixes = [
-  { num: '+48', country: 'PL' },
-  { num: '+42', country: 'CZ' },
-  { num: '+370', country: 'LT' },
-  { num: '+371', country: 'LV' },
+  '+48 (PL)',
+  '+42 (CZ)',
+  '+370 (LT)',
+  '+371 (LV)',
+  '+372 (EE)',
 ];
 
 const mapFn = item => (
