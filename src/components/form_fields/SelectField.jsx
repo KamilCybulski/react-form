@@ -12,10 +12,11 @@ const SelectField = ({ input, label, options }) => (
     >
       {options.map(opt => (
         <option key={opt.num} value={opt.num}>
-          {opt.num}({opt.country})
+          {opt.num} ({opt.country})
         </option>
       ))}
     </select>
+    <span className="selectfield__underline" />
   </div>
 );
 
