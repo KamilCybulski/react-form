@@ -28,23 +28,25 @@ class SelectField extends React.Component {
 
   render() {
     const {
-      input, meta, label, options,
+      input, meta, label, options, underline, inputCustomClass, wrapperCustomClass,
     } = this.props;
 
     return (
-      <div className="selectfield">
-        <div className="selectfield__controls">
-          <span>{label}</span>
-        </div>
+      <div className={wrapperCustomClass || 'selectfield'}>
+        {label &&
+          <div className="selectfield__controls">
+            <span>{label}</span>
+          </div>}
         <input
           {...input}
           readOnly
           type="text"
-          className="selectfield__input"
+          className={inputCustomClass || 'selectfield__input'}
         />
-        <span
-          className={meta.active ? 'selectfield__underline_active' : 'selectfield__underline'}
-        />
+        {underline &&
+          <span
+            className={meta.active ? 'selectfield__underline_active' : 'selectfield__underline'}
+          />}
         <div
           ref={this.handleDropdownRef}
           className="selectfield__dropdown"
@@ -69,6 +71,9 @@ class SelectField extends React.Component {
 
 SelectField.defaultProps = {
   label: '',
+  underline: false,
+  inputCustomClass: '',
+  wrapperCustomClass: '',
 };
 
 SelectField.propTypes = {
@@ -82,6 +87,9 @@ SelectField.propTypes = {
   }).isRequired,
   label: PropTypes.string,
   options: PropTypes.any.isRequired,
+  underline: PropTypes.bool,
+  inputCustomClass: PropTypes.string,
+  wrapperCustomClass: PropTypes.string,
 };
 
 export default SelectField;

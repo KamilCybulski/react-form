@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  align-self: flex-end;
 }
 
 .datefield__controls {
@@ -24,7 +25,29 @@
 
 .datefield__selects {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  border: 1px dashed cyan;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.datefield__select {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.datefield__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  border: 2px solid $divider-color;
+  flex: 1;
+  padding: 0 12px;
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  cursor: pointer;
 }

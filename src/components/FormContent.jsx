@@ -59,10 +59,10 @@ const FormContent = ({ visible }) => (
             />
           </div>
         </div>
-        <div className="form__row">
+        <div className="form__row_test">
           <GenderField />
         </div>
-        <div className="form__row">
+        <div className="form__row_test">
           <Fields names={['date.day', 'date.month', 'date.year']} component={DateField} />
         </div>
       </div>
