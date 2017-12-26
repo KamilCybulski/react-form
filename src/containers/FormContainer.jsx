@@ -26,6 +26,10 @@ class FormContainer extends React.Component {
       throw new SubmissionError({
         gender: '*Field required',
       });
+    } else if (!values.date || !values.date.day || !values.date.month || !values.date.year) {
+      throw new SubmissionError({
+        date: { day: '*Field required' },
+      });
     } else {
       console.log(values);
     }

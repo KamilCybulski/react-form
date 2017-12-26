@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import { connect } from 'react-redux';
-import { Field } from 'redux-form';
+import { Field, Fields } from 'redux-form';
 
 import FormDescription from './form_fields/FormDescription';
 import TextField from './form_fields/TextField';
 import SelectField from './form_fields/SelectField';
 import GenderField from './form_fields/GenderField';
+import DateField from './form_fields/DateField';
 
 const transitionClasses = {
   entering: ' form__content_entering',
@@ -23,16 +24,6 @@ const prefixes = [
   '+371 (LV)',
   '+372 (EE)',
 ];
-
-const mapFn = item => (
-  <option
-    className="selectfield__option"
-    key={item.num}
-    value={item.num}
-  >
-    {item.num} ({item.country})
-  </option>
-);
 
 const FormContent = ({ visible }) => (
   <Transition
@@ -59,7 +50,6 @@ const FormContent = ({ visible }) => (
               component={SelectField}
               label="Mobile"
               options={prefixes}
-              map={mapFn}
             />
           </div>
           <div className="form__cell_long">
@@ -73,7 +63,7 @@ const FormContent = ({ visible }) => (
           <GenderField />
         </div>
         <div className="form__row">
-          b-day
+          <Fields names={['date.day', 'date.month', 'date.year']} component={DateField} />
         </div>
       </div>
     )}

@@ -82,7 +82,6 @@ SelectField.propTypes = {
   }).isRequired,
   label: PropTypes.string,
   options: PropTypes.any.isRequired,
-  map: PropTypes.func.isRequired,
 };
 
 export default SelectField;
