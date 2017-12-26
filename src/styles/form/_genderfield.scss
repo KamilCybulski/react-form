@@ -1,0 +1,85 @@
+.genderfield {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.genderfield__controls {
+  box-sizing: border-box;
+  width: 100%;
+  height: 12px;
+  font-size: 11px;
+  color: $secondary-text-color;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px 
+}
+
+.genderfield__error {
+  color: $error-text-color;
+}
+
+.genderfield__buttons {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.genderfield__option {
+  width: 70px;
+  height: 50px;
+  margin-right: 23px;
+  display: flex;
+  align-items: center;
+}
+
+.genderfield__label {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $divider-color;
+
+  &_male {
+    background: url('../images/male.png');
+  }
+
+  &_female {
+    background: url('../images/female.png');
+  }
+
+  &_active {
+    border-color: $highlight-color;
+  }
+}
+
+.genderfield__radio {
+  box-sizing: border-box;
+  width: 16px;
+  height: 15px;
+  background-color: #fff;
+  border: 2px solid $divider-color;
+  margin-left: -9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_active {
+    border-color: $highlight-color;
+  }
+}
+
+.genderfield__check {
+  width: 3px;
+  height: 3px;
+
+  &_active {
+    background-color: $highlight-color;
+  }
+}
+
+input.genderfield__input {
+  display: none;
+}

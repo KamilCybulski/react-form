@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TextField = ({ input, meta, label }) => (
   <div className="textfield">
     <div className="textfield__controls">
-      <span className="textfield__label">{label}</span>
+      <span>{label}</span>
       <span className="textfield__error">{meta.error}</span>
     </div>
     <input {...input} type="text" className="textfield__input" />

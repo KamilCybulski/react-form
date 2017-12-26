@@ -7,6 +7,7 @@ import { Field } from 'redux-form';
 import FormDescription from './form_fields/FormDescription';
 import TextField from './form_fields/TextField';
 import SelectField from './form_fields/SelectField';
+import GenderField from './form_fields/GenderField';
 
 const transitionClasses = {
   entering: ' form__content_entering',
@@ -69,7 +70,7 @@ const FormContent = ({ visible }) => (
           </div>
         </div>
         <div className="form__row">
-          gender
+          <GenderField />
         </div>
         <div className="form__row">
           b-day

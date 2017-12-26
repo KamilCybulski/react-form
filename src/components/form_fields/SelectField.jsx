@@ -34,7 +34,7 @@ class SelectField extends React.Component {
     return (
       <div className="selectfield">
         <div className="selectfield__controls">
-          <span className="selectfield__label">{label}</span>
+          <span>{label}</span>
         </div>
         <input
           {...input}
