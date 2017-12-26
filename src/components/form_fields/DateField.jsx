@@ -19,7 +19,7 @@ const DateField = ({ date: { day, month, year } }) => (
         input={day.input}
         meta={day.meta}
         options={days}
-        wrapperCustomClass="datefield__select"
+        wrapperCustomClass="datefield__select datefield__select_short"
         inputCustomClass="datefield__input"
         top
       />
@@ -28,7 +28,7 @@ const DateField = ({ date: { day, month, year } }) => (
         input={month.input}
         meta={month.meta}
         options={months}
-        wrapperCustomClass="datefield__select"
+        wrapperCustomClass="datefield__select datefield__select_medium"
         inputCustomClass="datefield__input"
         top
       />
@@ -37,7 +37,7 @@ const DateField = ({ date: { day, month, year } }) => (
         input={year.input}
         meta={year.meta}
         options={years}
-        wrapperCustomClass="datefield__select"
+        wrapperCustomClass="datefield__select datefield__select_long"
         inputCustomClass="datefield__input"
         top
       />

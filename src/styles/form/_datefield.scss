@@ -36,6 +36,30 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   position: relative;
+
+  &_short {
+    width: 50px;
+  }
+
+  &_medium {
+    width: 130px;
+
+    @media screen and (max-width: 570px) {
+      width: 100px;
+    }
+
+    @media screen and (max-width: 520px) {
+      width: 50px;
+    }
+  }
+
+  &_long {
+    width: 130px;
+
+    @media screen and (max-width: 470px) {
+      width: 100px;
+    }
+  }
 }
 
 .datefield__input {
