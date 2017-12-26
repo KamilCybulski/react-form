@@ -9,7 +9,7 @@ class SelectField extends React.Component {
    * This is basically a hack that allows click event on dropdown items to be
    * registered before the dropdown is hidden
    */
-  componentDidUpdate = ((prevProps) => {
+  componentDidUpdate = (prevProps) => {
     const wasActive = prevProps.meta.active;
     const isActive = this.props.meta.active;
 
@@ -20,7 +20,7 @@ class SelectField extends React.Component {
     } else if (isActive && !wasActive) {
       this.dropdown.classList.add('selectfield__dropdown_active');
     }
-  })
+  }
 
   handleDropdownRef = (ref) => {
     this.dropdown = ref;
