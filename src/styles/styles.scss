@@ -7,3 +7,7 @@ body {
   font-family: 'Rubik', sans-serif;
   background-color: #2f2f2f;
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
