@@ -82,25 +82,26 @@
 }
 
 
-/* For splitting your form into rows. Rows will take equal amount od space in their container. If there is only one row, it will be as high as the container */
+/* For splitting your form into rows. Rows will take equal amount od space left in their container after allocating all items with fixed width. If there is only one row, it will be as high as the container */
 .form__row {
   width: 90%;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  &_test {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px;
 
-    @media screen and (min-width: 430px) {
-      width: 80%;
-    }
+  @media screen and (min-width: 430px) {
+    width: 80%;
   }
+}
+
+/* For splitting form into rows that have fixed height (90px). Can be used with regular form rows */
+.form__row_fixed-height {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
 
   @media screen and (min-width: 430px) {
     width: 80%;
@@ -145,6 +146,15 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+
+.form__separator {
+  width: 10px;
+  height: 50%;
+  align-self: flex-end;
+  border-top: 2px solid $divider-color;
+  margin: 0 8px;
 }
 
 
