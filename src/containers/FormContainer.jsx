@@ -22,6 +22,10 @@ class FormContainer extends React.Component {
       throw new SubmissionError({
         mobile: { prefix: '*Field required' },
       });
+    } else if (!values.gender) {
+      throw new SubmissionError({
+        gender: '*Field required',
+      });
     } else {
       console.log(values);
     }
