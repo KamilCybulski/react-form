@@ -50,6 +50,7 @@ const FormContent = ({ visible }) => (
               component={SelectField}
               label="Mobile"
               options={prefixes}
+              underline
             />
           </div>
           <div className="form__cell_long">
@@ -59,10 +60,10 @@ const FormContent = ({ visible }) => (
             />
           </div>
         </div>
-        <div className="form__row_test">
+        <div className="form__row_fixed-height">
           <GenderField />
         </div>
-        <div className="form__row_test">
+        <div className="form__row_fixed-height">
           <Fields names={['date.day', 'date.month', 'date.year']} component={DateField} />
         </div>
       </div>

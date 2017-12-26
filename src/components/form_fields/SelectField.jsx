@@ -28,7 +28,7 @@ class SelectField extends React.Component {
 
   render() {
     const {
-      input, meta, label, options, underline, inputCustomClass, wrapperCustomClass,
+      input, meta, label, options, underline, inputCustomClass, wrapperCustomClass, top,
     } = this.props;
 
     return (
@@ -49,7 +49,8 @@ class SelectField extends React.Component {
           />}
         <div
           ref={this.handleDropdownRef}
-          className="selectfield__dropdown"
+          className={`selectfield__dropdown
+          ${top ? ' selectfield__dropdown_top' : ''}`}
         >
           <ul className="selectfield__list">
             {options.map(opt => (
@@ -74,6 +75,7 @@ SelectField.defaultProps = {
   underline: false,
   inputCustomClass: '',
   wrapperCustomClass: '',
+  top: false,
 };
 
 SelectField.propTypes = {
@@ -90,6 +92,7 @@ SelectField.propTypes = {
   underline: PropTypes.bool,
   inputCustomClass: PropTypes.string,
   wrapperCustomClass: PropTypes.string,
+  top: PropTypes.bool,
 };
 
 export default SelectField;

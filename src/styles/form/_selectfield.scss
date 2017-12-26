@@ -50,8 +50,8 @@
 
 .selectfield__dropdown {
   position: absolute;
-  top: 101%;
   background-color: #fff;
+  top: 101%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
   transform: scaleY(0);
   transition: transform .3s;
@@ -60,6 +60,11 @@
   max-height: 100px;
   overflow-y: auto;
   width: 100%;
+
+  &_top {
+    top: -140%;
+    transform-origin: bottom;
+  }
 
   &_active {
     transform: scaleY(1);

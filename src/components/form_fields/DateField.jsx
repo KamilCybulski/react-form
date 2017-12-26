@@ -21,20 +21,25 @@ const DateField = ({ date: { day, month, year } }) => (
         options={days}
         wrapperCustomClass="datefield__select"
         inputCustomClass="datefield__input"
+        top
       />
+      <div className="form__separator" />
       <SelectField
         input={month.input}
         meta={month.meta}
         options={months}
         wrapperCustomClass="datefield__select"
         inputCustomClass="datefield__input"
+        top
       />
+      <div className="form__separator" />
       <SelectField
         input={year.input}
         meta={year.meta}
         options={years}
         wrapperCustomClass="datefield__select"
         inputCustomClass="datefield__input"
+        top
       />
     </div>
   </div>
