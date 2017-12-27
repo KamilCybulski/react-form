@@ -25,7 +25,8 @@
 .form__aside {
   width: $form-aside-width;
   height: 552px;
-  background-color: lightcoral;
+  background-image: url('../images/aside.jpg');
+  background-size: cover;
   transform: scaleX(0);
   transition: transform .5s;
   transform-origin: right;
