@@ -30,10 +30,56 @@ class FormContainer extends React.Component {
       throw new SubmissionError({
         date: { day: '*Field required' },
       });
+    } else if (!this.isDateValid(values.date)) {
+      throw new SubmissionError({
+        date: { day: 'Invalid date' },
+      });
     } else {
       console.log(values);
     }
   }
+
+  isDateValid = (formData) => {
+    const normalizeMonth = (month) => {
+      if (month.length <= 2) return parseInt(month, 10) - 1;
+      const conversionTable = {
+        January: 0,
+        February: 1,
+        March: 2,
+        April: 3,
+        May: 4,
+        June: 5,
+        July: 6,
+        August: 7,
+        September: 8,
+        October: 9,
+        November: 10,
+        December: 11,
+      };
+      return conversionTable[month];
+    };
+
+    const isValid = (d, m, y) => {
+      const date = new Date(y, m, d);
+      const nd = date.getDate();
+      const nm = date.getMonth();
+      const ny = date.getFullYear();
+
+      if (d === nd && y === ny && m === nm) {
+        return true;
+      }
+
+      return false;
+    };
+
+    const { day, month, year } = formData;
+    const d = parseInt(day, 10);
+    const m = normalizeMonth(month, 10);
+    const y = parseInt(year, 10);
+
+    return isValid(d, m, y);
+  }
+
 
   render() {
     return (

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import SelectField from './SelectField';
 
-const days = ['1', '2', '3', '4', '5'];
-const months = ['1', '2', '3', '4', '5'];
-const years = ['1990', '1991', '1992', '1993', '1994'];
+const daysList = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
+const monthsNums = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+const monthsStrs = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const years = ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'];
 
 
 const DateField = ({ date: { day, month, year } }) => (
@@ -18,7 +19,7 @@ const DateField = ({ date: { day, month, year } }) => (
       <SelectField
         input={day.input}
         meta={day.meta}
-        options={days}
+        options={daysList}
         wrapperCustomClass="datefield__select datefield__select_short"
         inputCustomClass="datefield__input"
         top
@@ -27,7 +28,7 @@ const DateField = ({ date: { day, month, year } }) => (
       <SelectField
         input={month.input}
         meta={month.meta}
-        options={months}
+        options={window.innerWidth >= 520 ? monthsStrs : monthsNums}
         wrapperCustomClass="datefield__select datefield__select_medium"
         inputCustomClass="datefield__input"
         top
@@ -52,6 +53,5 @@ DateField.propTypes = {
     year: PropTypes.object,
   }).isRequired,
 };
-
 
 export default DateField;
