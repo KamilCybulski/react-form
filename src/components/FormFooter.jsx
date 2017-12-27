@@ -5,34 +5,68 @@ import { connect } from 'react-redux';
 
 import rightArrow from '../images/right_arrow.png';
 
-const transitionClasses = {
+const buttonTransitionClasses = {
   entering: ' button_entering',
   entered: ' button_entered',
 };
 
-const FormFooter = ({ visible }) => (
-  <div className="form__footer">
-    <Transition
-      in={visible}
-      timeout={500}
-      appear
-    >
-      {state => (
-        <button
-          className={`button${transitionClasses[state] || ''}`}
-          type="submit"
+const iconTransitionClasses = {
+  entering: ' button__icon-box_entering',
+  entered: ' button__icon-box_entered',
+};
+
+class FormFooter extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      buttonTransitionEnded: false,
+    };
+  }
+
+  markTransitionEnded = () => {
+    this.setState({ buttonTransitionEnded: true });
+  }
+
+  render() {
+    const { visible } = this.props;
+
+    return (
+      <div className="form__footer">
+        <Transition
+          in={visible}
+          timeout={500}
+          appear
+          onEntered={this.markTransitionEnded}
         >
-          <div className="button__text">
-            Continue
-          </div>
-          <div className="button__icon-box">
-            <img src={rightArrow} alt="" />
-          </div>
-        </button>
-      )}
-    </Transition>
-  </div>
-);
+          {state => (
+            <button
+              className={`button${buttonTransitionClasses[state] || ''}`}
+              type="submit"
+            >
+              <div className="button__text">
+                Continue
+              </div>
+              <Transition
+                in={this.state.buttonTransitionEnded}
+                timeout={500}
+                appear
+              >
+                {iconState => (
+                  <div className={`button__icon-box
+                    ${iconTransitionClasses[iconState] || ''}`}
+                  >
+                    <img src={rightArrow} alt="" />
+                  </div>
+                )}
+              </Transition>
+            </button>
+          )}
+        </Transition>
+      </div>
+    );
+  }
+}
 
 FormFooter.propTypes = {
   visible: PropTypes.bool.isRequired,
