@@ -9,21 +9,22 @@ import TextField from './form_fields/TextField';
 import SelectField from './form_fields/SelectField';
 import GenderField from './form_fields/GenderField';
 import DateField from './form_fields/DateField';
+import config from '../config/form-config';
 
 const transitionClasses = {
   entering: ' form__content_entering',
   entered: ' form__content_entered',
 };
 
-const description = 'Take it all with you. Switch between devices, and pick up.';
+// const description = 'Take it all with you. Switch between devices, and pick up.';
 
-const prefixes = [
-  '+48 (PL)',
-  '+42 (CZ)',
-  '+370 (LT)',
-  '+371 (LV)',
-  '+372 (EE)',
-];
+// const prefixes = [
+//   '+48 (PL)',
+//   '+42 (CZ)',
+//   '+370 (LT)',
+//   '+371 (LV)',
+//   '+372 (EE)',
+// ];
 
 const FormContent = ({ visible }) => (
   <Transition
@@ -34,7 +35,7 @@ const FormContent = ({ visible }) => (
     {state => (
       <div className={`form__content${transitionClasses[state] || ''}`}>
         <div className="form__row">
-          <FormDescription text={description} />
+          <FormDescription text={config.description} />
         </div>
         <div className="form__row">
           <Field
@@ -49,7 +50,7 @@ const FormContent = ({ visible }) => (
               name="mobile.prefix"
               component={SelectField}
               label="Mobile"
-              options={prefixes}
+              options={config.prefixes}
               underline
             />
           </div>
