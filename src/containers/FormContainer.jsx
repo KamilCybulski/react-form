@@ -14,7 +14,7 @@ class FormContainer extends React.Component {
       throw new SubmissionError({
         mobile: { number: '*Field required' },
       });
-    } else if (values.mobile.number.length < 6) {
+    } else if (!this.isNumberValid(values.mobile.number)) {
       throw new SubmissionError({
         mobile: { number: '*6 digit number required' },
       });
@@ -78,6 +78,16 @@ class FormContainer extends React.Component {
     const y = parseInt(year, 10);
 
     return isValid(d, m, y);
+  }
+
+  isNumberValid = (input) => {
+    if (!input.match(/[^\d-\s]/g)) {
+      const digits = input.match(/\d/g);
+      if (digits.length >= 6) {
+        return true;
+      }
+    }
+    return false;
   }
 
 
