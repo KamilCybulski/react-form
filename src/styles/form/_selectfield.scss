@@ -60,6 +60,8 @@
   max-height: 100px;
   overflow-y: auto;
   width: 100%;
+  color: transparent;
+  text-shadow: 0 0 0 $primary-text-color;
 
   &_top {
     top: -140%;
