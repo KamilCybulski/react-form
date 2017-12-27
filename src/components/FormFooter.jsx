@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import { connect } from 'react-redux';
 
+import rightArrow from '../images/right_arrow.png';
+
 const transitionClasses = {
   entering: ' button_entering',
   entered: ' button_entered',
@@ -23,7 +25,9 @@ const FormFooter = ({ visible }) => (
           <div className="button__text">
             Continue
           </div>
-          <div className="button__icon" />
+          <div className="button__icon-box">
+            <img src={rightArrow} alt="" />
+          </div>
         </button>
       )}
     </Transition>
