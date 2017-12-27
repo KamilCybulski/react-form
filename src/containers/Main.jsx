@@ -7,9 +7,26 @@ import FormAside from '../components/FormAside';
 import Overlay from '../components/Overlay';
 import { hideBackgroundOverlay } from '../actions/animations';
 
+import bcgImg from '../images/bcg.jpg';
+import asideImg from '../images/aside.jpg';
+
 class Main extends React.Component {
   componentDidMount = () => {
-    setTimeout(this.props.hideOverlay, 1000);
+    // To make sure all big images are loaded before starting the animation
+    const loadBcg = new Promise((resolve) => {
+      const img = new Image(1352, 795);
+      img.src = bcgImg;
+      img.onload = resolve;
+    });
+
+    const loadAside = new Promise((resolve) => {
+      const img = new Image(304, 548);
+      img.src = asideImg;
+      img.onload = resolve;
+    });
+
+    Promise.all([loadBcg, loadAside])
+      .then(this.props.hideOverlay);
   }
 
   render() {

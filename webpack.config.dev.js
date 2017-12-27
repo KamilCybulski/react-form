@@ -18,6 +18,7 @@ module.exports = {
     headers: { 'Access-Control-Allow-Origin': '*' },
   },
   entry: [
+    'babel-polyfill',
     'react-hot-loader/patch',
     path.join(__dirname, '/src/index.jsx'),
   ],
