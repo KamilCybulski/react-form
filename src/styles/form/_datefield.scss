@@ -63,15 +63,16 @@
 }
 
 .datefield__input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   border: 2px solid $divider-color;
   flex: 1;
   padding: 0 12px;
-  color: transparent;
-  text-shadow: 0 0 0 $primary-text-color;
+  color: $primary-text-color;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  outline: none;
+  overflow: hidden;
 }

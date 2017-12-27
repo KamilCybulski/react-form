@@ -37,12 +37,14 @@ class SelectField extends React.Component {
           <div className="selectfield__controls">
             <span>{label}</span>
           </div>}
-        <input
+        <div
           {...input}
           readOnly
-          type="text"
+          tabIndex={-1}
           className={inputCustomClass || 'selectfield__input'}
-        />
+        >
+          {input.value}
+        </div>
         {underline &&
           <span
             className={meta.active ? 'selectfield__underline_active' : 'selectfield__underline'}
