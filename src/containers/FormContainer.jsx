@@ -32,7 +32,7 @@ class FormContainer extends React.Component {
       });
     } else if (!this.isDateValid(values.date)) {
       throw new SubmissionError({
-        date: { day: 'Invalid date' },
+        date: { day: '*Invalid date' },
       });
     } else {
       console.log(values);
